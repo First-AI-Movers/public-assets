@@ -82,9 +82,21 @@ Model Context Protocol (MCP) servers extend Claude's capabilities with real-worl
 
 ## Custom Skills (`custom-skills/`)
 
-Skills are structured instruction sets that guide Claude through specialised, repeatable workflows — document generation, architecture design, data analysis, and more. This folder will contain community-contributed and First AI Movers-authored skill definitions.
+Skills are structured instruction sets that guide Claude through specialised, repeatable workflows — document generation, architecture design, data analysis, and more. Drop any `.md` skill file into your Claude skills folder to activate it.
 
-> **Coming soon.** Contributions welcome via pull request.
+### Available Skills
+
+| File | Description |
+|---|---|
+| [`meta-models-reasoning.md`](custom-skills/meta-models-reasoning.md) | Six-step meta-cognitive framework for complex problem-solving and bias mitigation. Applies checks for nonlinearity, gray thinking, Occam's bias, framing bias, anti-comfort, and delayed discomfort before arriving at any conclusion. |
+
+### How to install a skill
+
+1. Download the `.md` file from this folder.
+2. Place it in your Claude skills directory (e.g. `~/.claude/skills/` or your project's `.skills/` folder).
+3. Claude will automatically detect and apply the skill when relevant triggers are matched.
+
+Contributions welcome via pull request.
 
 ---
 
