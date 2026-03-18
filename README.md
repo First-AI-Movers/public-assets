@@ -2,7 +2,7 @@
 
 > **Accelerating AI adoption for forward-thinking professionals and organisations.**
 
-This repository is the public-facing asset library for [First AI Movers](https://firstaimovers.com). It contains reusable building blocks for teams and individuals looking to adopt Claude-powered AI workflows: instruction templates, MCP configurations, custom skills, and agent topology blueprints.
+This repository is the public-facing asset library for [First AI Movers](https://firstaimovers.com). It contains reusable building blocks for teams and individuals looking to adopt Claude-powered AI workflows: instruction templates, AI assistant system prompts, MCP configurations, custom skills, and agent topology blueprints.
 
 Everything here is designed to be forked, adapted, and deployed. Attribution is appreciated but not required.
 
@@ -12,6 +12,7 @@ Everything here is designed to be forked, adapted, and deployed. Attribution is 
 
 ```
 public-assets/
+├── ai-assistants/            # System prompts for strategic AI assistant personas
 ├── claude-md-templates/
 │   ├── global/               # Organisation-wide Claude instruction files
 │   └── project-specific/     # Per-project or per-role Claude instruction files
@@ -19,8 +20,27 @@ public-assets/
 ├── custom-skills/            # Reusable Claude skill definitions
 ├── agent-topologies/         # Multi-agent architecture blueprints
 ├── .gitignore
+├── LICENSE
 └── README.md
 ```
+
+---
+
+## AI Assistants (`ai-assistants/`)
+
+These are system prompts for configuring AI assistants (Gemini, GPT-4o, Claude, or any capable LLM) as **strategic thinking partners**. They are designed to complement Claude's execution layer — the assistant thinks and architects, Claude acts.
+
+### Available Assistants
+
+| File | Persona | Use Case |
+|---|---|---|
+| [`fractional-cto-architect-260318.md`](ai-assistants/fractional-cto-architect-260318.md) | Fractional CTO & AI Architect | System design, data contracts, executive communications, Claude prompt generation |
+
+### How they work
+
+These assistants are not meant to execute tasks directly. They operate one level above: helping you think through architecture, scope decisions, and producing well-structured prompts that you then feed to Claude (via Cowork or Claude Code) for execution.
+
+The loop is: **You → Strategic AI Assistant → Claude prompt → Claude executes via MCPs**
 
 ---
 
@@ -82,14 +102,15 @@ Pull requests are welcome. Please follow these conventions:
 
 - Use [Conventional Commits](https://www.conventionalcommits.org/) for all commit messages
 - Never commit `.env` files, credentials, API keys, or any sensitive data
-- Include a brief description of what you're adding and the use case it addresses
+- Include a brief description of what you’re adding and the use case it addresses
 
 ---
 
 ## License
 
-Content in this repository is released under the [MIT License](LICENSE) unless otherwise noted. You are free to use, modify, and distribute with attribution.
+Content in this repository is released under the [MIT License](LICENSE).  
+© 2026 Dr. Hernani Costa. You are free to use, modify, and distribute with attribution.
 
 ---
 
-*Maintained by [Hernani](mailto:hernani@firstaimovers.com) and the First AI Movers team.*
+*Maintained by [Dr. Hernani Costa](mailto:hernani@firstaimovers.com) and the First AI Movers team.*
