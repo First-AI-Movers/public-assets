@@ -28,13 +28,14 @@ public-assets/
 
 ## AI Assistants (`ai-assistants/`)
 
-These are system prompts for configuring AI assistants (Gemini, GPT-4o, Claude, or any capable LLM) as **strategic thinking partners**. They are designed to complement Claude's execution layer — the assistant thinks and architects, Claude acts.
+These are system prompts for configuring AI assistants (Gemini, GPT-4o, Claude, or any capable LLM) as **strategic thinking partners**. They are designed to complement Claude’s execution layer — the assistant thinks and architects, Claude acts.
 
 ### Available Assistants
 
 | File | Persona | Use Case |
 |---|---|---|
 | [`fractional-cto-architect-260318.md`](ai-assistants/fractional-cto-architect-260318.md) | Fractional CTO & AI Architect | System design, data contracts, executive communications, Claude prompt generation |
+| [`architecture-blueprint-prompt-260319.md`](ai-assistants/architecture-blueprint-prompt-260319.md) | Senior Enterprise Systems Architect | Top-down system design through 8 structured layers: business context → domain model → system context → containers → flows → components → data contracts → deployment |
 
 ### How they work
 
@@ -42,11 +43,21 @@ These assistants are not meant to execute tasks directly. They operate one level
 
 The loop is: **You → Strategic AI Assistant → Claude prompt → Claude executes via MCPs**
 
+### Architecture Blueprint — Quick Summary
+
+The `architecture-blueprint-prompt-260319.md` assistant enforces a strict top-down design order to prevent premature jumps to tables, APIs, or cloud diagrams. It comes in three variants:
+
+- **Full version** — for new, complex, or regulated systems
+- **Fast variant** — for day-to-day architecture work
+- **Artifact format** — enforces consistent stage-by-stage output structure
+
+Start every session with the included **Starting Input Template** to give the LLM enough context to begin properly.
+
 ---
 
 ## How to Use the CLAUDE.md Templates
 
-`CLAUDE.md` files are instruction documents that shape how Claude behaves within a given context — whether that's an entire organisation, a specific project, or a particular role. They are the primary mechanism for establishing consistent, secure, and opinionated AI behaviour across a team.
+`CLAUDE.md` files are instruction documents that shape how Claude behaves within a given context — whether that’s an entire organisation, a specific project, or a particular role. They are the primary mechanism for establishing consistent, secure, and opinionated AI behaviour across a team.
 
 ### Getting started
 
@@ -70,7 +81,7 @@ This convention allows multiple instruction files to coexist and evolve with cle
 
 ## MCP Configurations (`mcp-configs/`)
 
-Model Context Protocol (MCP) servers extend Claude's capabilities with real-world integrations — GitHub, Notion, Airtable, Slack, file systems, and more. This folder will contain:
+Model Context Protocol (MCP) servers extend Claude’s capabilities with real-world integrations — GitHub, Notion, Airtable, Slack, file systems, and more. This folder will contain:
 
 - Canonical MCP server configuration templates
 - Security-hardened JSON config files
@@ -88,12 +99,12 @@ Skills are structured instruction sets that guide Claude through specialised, re
 
 | File | Description |
 |---|---|
-| [`meta-models-reasoning.md`](custom-skills/meta-models-reasoning.md) | Six-step meta-cognitive framework for complex problem-solving and bias mitigation. Applies checks for nonlinearity, gray thinking, Occam's bias, framing bias, anti-comfort, and delayed discomfort before arriving at any conclusion. |
+| [`meta-models-reasoning.md`](custom-skills/meta-models-reasoning.md) | Six-step meta-cognitive framework for complex problem-solving and bias mitigation. Applies checks for nonlinearity, gray thinking, Occam’s bias, framing bias, anti-comfort, and delayed discomfort before arriving at any conclusion. |
 
 ### How to install a skill
 
 1. Download the `.md` file from this folder.
-2. Place it in your Claude skills directory (e.g. `~/.claude/skills/` or your project's `.skills/` folder).
+2. Place it in your Claude skills directory (e.g. `~/.claude/skills/` or your project’s `.skills/` folder).
 3. Claude will automatically detect and apply the skill when relevant triggers are matched.
 
 Contributions welcome via pull request.
