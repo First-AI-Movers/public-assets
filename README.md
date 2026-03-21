@@ -28,7 +28,7 @@ public-assets/
 
 ## AI Assistants (`ai-assistants/`)
 
-These are system prompts for configuring AI assistants (Gemini, GPT-4o, Claude, or any capable LLM) as **strategic thinking partners**. They are designed to complement Claude’s execution layer — the assistant thinks and architects, Claude acts.
+These are system prompts for configuring AI assistants (Gemini, GPT-4o, Grok, Claude, or any capable LLM) as **strategic thinking partners**. They are designed to complement Claude’s execution layer — the assistant thinks and architects, Claude acts.
 
 ### Available Assistants
 
@@ -36,6 +36,7 @@ These are system prompts for configuring AI assistants (Gemini, GPT-4o, Claude, 
 |---|---|---|
 | [`fractional-cto-architect-260318.md`](ai-assistants/fractional-cto-architect-260318.md) | Fractional CTO & AI Architect | System design, data contracts, executive communications, Claude prompt generation |
 | [`architecture-blueprint-prompt-260319.md`](ai-assistants/architecture-blueprint-prompt-260319.md) | Senior Enterprise Systems Architect | Top-down system design through 8 structured layers: business context → domain model → system context → containers → flows → components → data contracts → deployment |
+| [`prompt-engineer-planning-partner-260319.md`](ai-assistants/prompt-engineer-planning-partner-260319.md) | Claude Desktop Prompt Engineer & Planning Partner | Pre-processes your ideas into perfectly structured, tool-aware prompts ready to paste into Claude Desktop with full MCP context |
 
 ### How they work
 
@@ -45,13 +46,11 @@ The loop is: **You → Strategic AI Assistant → Claude prompt → Claude execu
 
 ### Architecture Blueprint — Quick Summary
 
-The `architecture-blueprint-prompt-260319.md` assistant enforces a strict top-down design order to prevent premature jumps to tables, APIs, or cloud diagrams. It comes in three variants:
+The `architecture-blueprint-prompt-260319.md` assistant enforces a strict top-down design order to prevent premature jumps to tables, APIs, or cloud diagrams. It comes in three variants: full, fast day-to-day, and artifact format. Start every session with the included **Starting Input Template**.
 
-- **Full version** — for new, complex, or regulated systems
-- **Fast variant** — for day-to-day architecture work
-- **Artifact format** — enforces consistent stage-by-stage output structure
+### Prompt Engineer — Quick Summary
 
-Start every session with the included **Starting Input Template** to give the LLM enough context to begin properly.
+The `prompt-engineer-planning-partner-260319.md` assistant acts as a “bouncer” between your thinking and Claude Desktop. It refines your idea through natural conversation, then outputs a single production-quality prompt — complete with `<system_instruction>` tags, numbered tasks, and explicit MCP tool instructions — ready to paste directly into Claude. Includes specialist variants for architecture-only, research-heavy, and code-permitted sessions.
 
 ---
 
